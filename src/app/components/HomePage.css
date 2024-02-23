@@ -1,0 +1,39 @@
+table tbody tr td {
+    font-size: 16px;
+    height: 21px;
+    padding: 1.6rem;
+}
+
+
+.container-list {
+    width: 80%;
+    margin: 100px auto;
+}
+
+.card {
+    background-color: aliceblue;
+    box-shadow: 0 3px 10px 0 var(--card-shadow-color);
+    transition: box-shadow 0.25s cubic-bezier(0.32, 0.01, 0, 1);
+    margin: var(--card-margin-gutter);
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+    border-collapse: collapse;
+    padding-bottom: 2em;
+}
+
+table thead tr th {
+    color: #738f93;
+    letter-spacing: 1.4px;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    height: 48px;
+    padding: 0 1.6em;
+    vertical-align: middle;
+    font-weight: 400;
+}
