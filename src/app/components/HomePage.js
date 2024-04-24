@@ -27,7 +27,6 @@ const HomePage = () => {
     const repoName = e.target.value;
     if (repoName) {
       const list = items.filter((item, i) => {
-        return item.name.includes(repoName)
       });
       setFilteredItems(list);
     } else {
@@ -57,15 +56,32 @@ const HomePage = () => {
             <th>Full Name</th>
             <th>Language</th>
             <th>Visibility</th>
+            <th>Open PRs</th>
+            <th>Data PRs</th>
+            <th>Pushe At</th>
         </tr>
         </thead>
         <tbody>
           {filteredItems.map((item, index) => (
-            <tr key={`row-${index}`}> 
+            <tr key={`row-${index}`}>
                 <td> {item.name} </td>
-                <td> {item.description} </td>
+                <td> {item.full_name} </td>
                 <td> {item.language} </td>
                 <td> {item.visibility} </td>
+                <td> {item.countOpenPullRequests} </td>
+                <td>
+                {/* Mapear y mostrar los pull requests */}
+                <ul>
+                  {item.dataOpenPullRequests.map(pr => (
+                    <li key={pr.id}>
+                      <a href={pr.url} target="_blank" rel="noopener noreferrer">
+                        {pr.creator} - {pr.url}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                </td>
+                <td> {item.pushed_at} </td>
             </tr>
           )
           )}
